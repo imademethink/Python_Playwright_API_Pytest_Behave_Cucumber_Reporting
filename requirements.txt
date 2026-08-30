@@ -1,0 +1,5 @@
+behave==1.2.6
+playwright==1.57.0
+pytest==9.0.3
+faker
+allure-behave

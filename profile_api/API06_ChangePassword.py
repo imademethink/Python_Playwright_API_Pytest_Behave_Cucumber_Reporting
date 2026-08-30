@@ -1,0 +1,38 @@
+import json
+from profile_api.API00_Base import BaseAPIPrep
+
+
+class APIChangePassword(BaseAPIPrep):
+    def __init__(self, context):
+        self.context = context
+        self.test_data = None
+
+    def prep_header(self):
+        print("    APIChangePassword:: prep_header")
+        self.test_data = self.context.global_handle
+        self.context.headers = {"X-Auth-Token": self.test_data["token"]}
+        print("    Header json:\n" + json.dumps(self.context.headers, indent=4))
+
+    def prep_body(self):
+        print("    APIChangePassword:: prep_body")
+        self.context.payload = {"currentPassword":self.test_data["password"], "newPassword":self.test_data["password_new"]}
+        print("    Payload json:\n" + json.dumps(self.context.payload, indent=4))
+
+    def prep_api_call(self):
+        print("    APIChangePassword:: prep_api_call")
+        self.context.response = self.context.api_request.post(
+            url=self.test_data["endpoint_change_password"], headers=self.context.headers, data=self.context.payload)
+        print("    Url: " + self.context.base_url + self.test_data["endpoint_change_password"])
+        print("    Method: POST")
+
+    def prep_response_validate(self):
+        print("    APIChangePassword:: prep_response_process")
+        response = self.context.response
+        print("    Response code:\n" + str(response.status))
+        assert response.status == 200
+        response_json = response.json()
+        print("    Response json:\n" + json.dumps(response_json, indent=4))
+        assert response_json["success"] == True
+        assert response_json["status"] == 200
+        assert response_json["message"] == "The password was successfully updated"
+        self.test_data["password"] = self.test_data["password_new"]

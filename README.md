@@ -446,7 +446,6 @@ Just a clean and practical automation architecture that teams can understand, ma
 | Run regression       | `behave --tags=regression`              |
 | Run feature          | `behave features/login.feature`         |
 | Run scenario         | `behave --name "Scenario Name"`         |
-| Select browser       | `behave -D browser=chrome`              |
 | Generate HTML report | `behave -f html -o reports/report.html` |
 
 ---

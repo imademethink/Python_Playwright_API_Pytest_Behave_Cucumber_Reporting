@@ -2,6 +2,13 @@
 
 ### Production-Ready Python Playwright API BDD/ Behave Automation Framework
 
+<img width="1672" height="941" alt="Ready To Use Automation Framework - Python, Playwright, API,  Behave Cucumber, Allure Reporting" src="https://github.com/user-attachments/assets/eea11c42-2258-49da-a73e-22ba6d3d0eba" />
+
+
+# YouTube Video Link
+
+# https://youtu.be/3RMwM2HoyNk
+
 Build reliable, maintainable, and scalable API automation using **Python, REST API, Playwright, Behave, Gherkin, and Allure/ HTML Reporting**.
 
 ⭐ If this project helps you, please consider giving it a Star!

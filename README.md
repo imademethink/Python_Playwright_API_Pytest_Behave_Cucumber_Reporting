@@ -4,7 +4,6 @@
 
 <img width="1672" height="941" alt="Ready To Use Automation Framework - Python, Playwright, API,  Behave Cucumber, Allure Reporting" src="https://github.com/user-attachments/assets/eea11c42-2258-49da-a73e-22ba6d3d0eba" />
 
-
 # YouTube Video Link
 
 # https://youtu.be/3RMwM2HoyNk
@@ -150,16 +149,10 @@ Scenario: Successful login
 Scenario: Invalid login
 ```
 
-Execute individual tests:
+Execute multiple tags:
 
 ```bash
-behave -f allure_behave.formatter:AllureFormatter -o allure-report  -f plain  --no-skipped --no-capture --tags=@case1
-```
-
-Execute all/ regression tests:
-
-```bash
-behave -f allure_behave.formatter:AllureFormatter -o allure-report  -f plain  --no-skipped --no-capture --tags=@case1
+behave --tags="smoke or regression"
 ```
 
 ---
@@ -264,6 +257,7 @@ Install the following before running the framework:
 
 # 🚀 Getting Started
 
+Download code:
 
 ```bash
 git clone https://github.com/imademethink/Python_Playwright_API_Pytest_Behave_Cucumber_Reporting.git
@@ -292,12 +286,24 @@ Install packages:
 pip install -r requirements.txt
 ```
 
+Run specific tests with a specific tag:
+
+```bash
+behave -f allure_behave.formatter:AllureFormatter -o allure-results -f plain  --no-skipped  --no-capture --tags=@case1 
+```
+
 Run all tests:
 
 ```bash
-behave -f allure_behave.formatter:AllureFormatter -o allure-results -f plain  --no-skipped  --no-capture
+behave -f allure_behave.formatter:AllureFormatter -o allure-report  -f plain  --no-skipped  --no-capture
 ```
 
+
+Allure Binary intallation: Download Allure Binary from below link, Save it to a folder and add it's path in environment variable
+
+```bash
+https://github.com/allure-framework/allure2/releases
+```
 
 Generate Allure Reports:
 
@@ -305,15 +311,6 @@ Generate Allure Reports:
 allure serve allure-results --clean -o allure-report
 ```
 
-
-# 🧪 Test Execution Examples
-
-### Run Specific Scenario
-
-```bash
-behave -f allure_behave.formatter:AllureFormatter -o allure-results -f plain  --no-skipped  --no-capture --tags=@case1 
-allure serve allure-results --clean -o allure-report
-```
 
 # 🧹 Clean Framework Principles
 

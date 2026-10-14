@@ -6,7 +6,7 @@
 
 # YouTube Video Link
 
-# https://youtu.be/3RMwM2HoyNk
+# https://youtu.be/fZeTA90pg5I
 
 Build reliable, maintainable, and scalable API automation using **Python, REST API, Playwright, Behave, Gherkin, and Allure/ HTML Reporting**.
 
